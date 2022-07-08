@@ -1,51 +1,32 @@
 import React from 'react';
+import {NavigationContainer} from '@react-navigation/native';
+import {createNativeStackNavigator} from '@react-navigation/native-stack';
+import Main from './components/Main';
+import * as eva from '@eva-design/eva';
+import {ApplicationProvider} from '@ui-kitten/components';
+import Login from './components/Login';
+import SignUp from './components/SignUP';
+import Auth from './components/Auth';
 
-import {SafeAreaView, StyleSheet, Image, View} from 'react-native';
-import {Button, NativeBaseProvider} from 'native-base';
+const Stack = createNativeStackNavigator();
 
-const App = ({navigation}) => {
+const App = () => {
   return (
-    <NativeBaseProvider>
-      <SafeAreaView style={styles.Layoutcontainer}>
-         <Image source={require('./CompanyLogo.png')} style={styles.img} /> 
-        <View style={styles.btncontainer}>
-          <Button
-            style={styles.button}
-            onPress={() => navigation.navigate('Welcome')}>
-            SIGNUP
-          </Button>
-          <Button
-            style={styles.button}
-            onPress={() => navigation.navigate('About You')}>
-            LOGIN
-          </Button>
-        </View>
-      </SafeAreaView>
-    </NativeBaseProvider>
+    <ApplicationProvider {...eva} theme={eva.light}>
+      <NavigationContainer>
+        <Stack.Navigator>
+          <Stack.Screen
+            name="NIMI"
+            component={Main}
+            options={{headerShown: false}}
+          />
+          <Stack.Screen name="Welcome" component={Login} />
+          <Stack.Screen name="About You" component={SignUp} />
+          <Stack.Screen name="Auth" component={Auth} />
+        </Stack.Navigator>
+      </NavigationContainer>
+    </ApplicationProvider>
   );
 };
-const styles = StyleSheet.create({
-  Layoutcontainer: {
-    flex: 1,
-    justifyContent: 'center',
-    alignItems: 'center',
-    backgroundColor: '#f97316',
-  },
-  img: {
-    width: 366,
-    height: 306,
-  },
-  btncontainer: {
-    flexDirection: 'row',
-    flexWrap: 'wrap',
-    backgroundColor: '#f97316',
-    position: 'absolute',
-    bottom: 20,
-    left: 9,
-  },
-  button: {
-    margin: 5,
-    width: '46%',
-  },
-});
+
 export default App;

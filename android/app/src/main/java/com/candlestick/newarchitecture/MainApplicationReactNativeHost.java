@@ -1,4 +1,4 @@
-package com.luckapp.newarchitecture;
+package com.candlestick.newarchitecture;
 
 import android.app.Application;
 import androidx.annotation.NonNull;
@@ -19,9 +19,9 @@ import com.facebook.react.fabric.CoreComponentsRegistry;
 import com.facebook.react.fabric.EmptyReactNativeConfig;
 import com.facebook.react.fabric.FabricJSIModuleProvider;
 import com.facebook.react.uimanager.ViewManagerRegistry;
-import com.luckapp.BuildConfig;
-import com.luckapp.newarchitecture.components.MainComponentsRegistry;
-import com.luckapp.newarchitecture.modules.MainApplicationTurboModuleManagerDelegate;
+import com.candlestick.BuildConfig;
+import com.candlestick.newarchitecture.components.MainComponentsRegistry;
+import com.candlestick.newarchitecture.modules.MainApplicationTurboModuleManagerDelegate;
 import java.util.ArrayList;
 import java.util.List;
 

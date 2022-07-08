@@ -1,4 +1,4 @@
-package com.luckapp.newarchitecture.components;
+package com.candlestick.newarchitecture.components;
 
 import com.facebook.jni.HybridData;
 import com.facebook.proguard.annotations.DoNotStrip;

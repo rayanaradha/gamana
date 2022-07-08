@@ -1,15 +1,19 @@
 {
-  "name": "luckApp",
+  "name": "gamana",
   "version": "0.0.1",
   "private": true,
   "scripts": {
     "android": "react-native run-android",
     "ios": "react-native run-ios",
     "start": "react-native start",
+    "serve": "cd server && node index.js",
     "test": "jest",
     "lint": "eslint ."
   },
   "dependencies": {
+    "axios": "^0.27.2",
+    "dotenv": "^16.0.1",
+    "express": "^4.18.1",
     "native-base": "^3.4.8",
     "react": "17.0.2",
     "react-native": "0.68.2",
